@@ -26,6 +26,7 @@ class SecurityManager(private val context: Context) {
         private const val KEY_PASSWORD_HASH = "vault_pwd_hash"
         private const val KEY_SALT = "vault_salt"
         private const val KEY_NOTES_DATA = "vault_encrypted_notes"
+        private const val KEY_BIOMETRIC_ENABLED = "vault_biometric_enabled"
     }
 
     fun isPasswordSet(): Boolean {
@@ -41,6 +42,7 @@ class SecurityManager(private val context: Context) {
         sharedPreferences.edit()
             .putString(KEY_SALT, saltHex)
             .putString(KEY_PASSWORD_HASH, hash)
+            .putBoolean(KEY_BIOMETRIC_ENABLED, true)
             .apply()
     }
 
@@ -80,6 +82,7 @@ class SecurityManager(private val context: Context) {
             obj.put("title", note.title)
             obj.put("content", note.content)
             obj.put("updatedAt", note.updatedAt)
+            obj.put("isHidden", note.isHidden)
             obj.put("category", note.category)
             jsonArray.put(obj)
         }
@@ -101,7 +104,8 @@ class SecurityManager(private val context: Context) {
                         title = obj.getString("title"),
                         content = obj.getString("content"),
                         updatedAt = obj.getLong("updatedAt"),
-                        category = obj.optString("category", "General")
+                        isHidden = obj.optBoolean("isHidden", false),
+                        category = obj.optString("category", "Personal")
                     )
                 )
             }
