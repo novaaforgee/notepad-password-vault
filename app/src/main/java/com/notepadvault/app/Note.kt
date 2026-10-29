@@ -5,5 +5,6 @@ data class Note(
     val title: String,
     val content: String,
     val updatedAt: Long,
+    val isHidden: Boolean = false,
     val category: String = "Personal"
 )
