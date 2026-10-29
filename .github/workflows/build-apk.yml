@@ -36,31 +36,31 @@ jobs:
         chmod +x gradlew
         ./gradlew assembleRelease --stacktrace
         mkdir -p release-output
-        cp app/build/outputs/apk/release/*.apk release-output/NotePad-MIUI-Vault-v1.1.apk
+        cp app/build/outputs/apk/release/*.apk release-output/NotePad-Private-Vault-v1.1.apk
 
     - name: Upload Release APK Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: NotePad-MIUI-Vault-Release-APK
-        path: release-output/NotePad-MIUI-Vault-v1.1.apk
+        name: NotePad-Private-Vault-Release-APK
+        path: release-output/NotePad-Private-Vault-v1.1.apk
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2
       with:
         tag_name: v1.1.0
-        name: "Note Pad MIUI Vault v1.1.0 (Fingerprint + Swipe-Down)"
+        name: "Note Pad Private Vault v1.1.0 (Fingerprint + Swipe-Down)"
         body: |
-          ### 📱 Note Pad MIUI / Mi Pad Inspired Vault - v1.1.0
+          ### 📱 Note Pad Private / Vault Pad Inspired Vault - v1.1.0
           
-          **MIUI Pad Gestures & Biometrics:**
-          - 👆 **Swipe-Down to Reveal Private Vault**: Pull down anywhere on the screen just like MIUI / Xiaomi Notes to uncover the hidden lock mechanism!
+          **Private Pad Gestures & Biometrics:**
+          - 👆 **Swipe-Down to Reveal Private Vault**: Pull down anywhere on the screen just like Private / Modern Notes to uncover the hidden lock mechanism!
           - 🧬 **Fingerprint & Biometrics**: Instant unlocking via hardware fingerprint sensor or device biometrics.
           - 🔑 **Master Password Fallback**: Password / PIN entry fallback if biometric isn't preferred.
           - 🛡️ **Hide Any Note**: One-tap hide icon to move any note instantly into the encrypted Private Vault.
-          - 🎨 **MIUI Pad Aesthetic**: Modern Charcoal & Vibrant Orange accent theme with smooth spring physics animations.
+          - 🎨 **Private Pad Aesthetic**: Modern Charcoal & Vibrant Orange accent theme with smooth spring physics animations.
         draft: false
         prerelease: false
         files: |
-          release-output/NotePad-MIUI-Vault-v1.1.apk
+          release-output/NotePad-Private-Vault-v1.1.apk
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
