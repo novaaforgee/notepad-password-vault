@@ -51,10 +51,10 @@ class MainActivity : FragmentActivity() {
         securityManager = SecurityManager(this)
 
         setContent {
-            // MIUI / HyperOS Inspired Palette
+            // Private / HyperOS Inspired Palette
             MaterialTheme(
                 colorScheme = darkColorScheme(
-                    primary = Color(0xFFFF6900), // MIUI Vibrant Orange Accent
+                    primary = Color(0xFFFF6900), // Private Vibrant Orange Accent
                     secondary = Color(0xFF00C4B4),
                     background = Color(0xFF0D0D11), // Deep Charcoal
                     surface = Color(0xFF181820),     // Elevated Glassy Surface
@@ -96,7 +96,7 @@ fun MiuiNotesMainScreen(
     var showPasswordModal by remember { mutableStateOf(false) }
     var searchQuery by remember { mutableStateOf("") }
 
-    // MIUI Swipe Down threshold tracking
+    // Private Swipe Down threshold tracking
     var pullOffsetY by remember { mutableStateOf(0f) }
     val animatedPullY by animateFloatAsState(
         targetValue = pullOffsetY,
@@ -111,7 +111,7 @@ fun MiuiNotesMainScreen(
         if (BiometricHelper.canAuthenticate(activity)) {
             BiometricHelper.showBiometricPrompt(
                 activity = activity,
-                title = "MIUI Private Vault",
+                title = "Private Private Vault",
                 subtitle = "Touch fingerprint sensor or enter password",
                 onSuccess = {
                     screenState = VaultScreenState.SECRET_VAULT
@@ -152,7 +152,7 @@ fun MiuiNotesMainScreen(
                         }
                     )
             ) {
-                // MIUI Hidden Pad Lock Header Revealed on Pull Down
+                // Private Hidden Pad Lock Header Revealed on Pull Down
                 val pullProgress = (animatedPullY / 200f).coerceIn(0f, 1f)
                 Box(
                     modifier = Modifier
@@ -187,7 +187,7 @@ fun MiuiNotesMainScreen(
                     }
                 }
 
-                // Main Content View (Displaces down on swipe like MIUI Pad)
+                // Main Content View (Displaces down on swipe like Private Pad)
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
@@ -197,7 +197,7 @@ fun MiuiNotesMainScreen(
                 ) {
                     Spacer(modifier = Modifier.height(44.dp))
 
-                    // MIUI Pad Header Style
+                    // Private Pad Header Style
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween,
@@ -236,7 +236,7 @@ fun MiuiNotesMainScreen(
 
                     Spacer(modifier = Modifier.height(16.dp))
 
-                    // MIUI Rounded Search Pill
+                    // Private Rounded Search Pill
                     OutlinedTextField(
                         value = searchQuery,
                         onValueChange = { searchQuery = it },
@@ -311,7 +311,7 @@ fun MiuiNotesMainScreen(
                             }
                         }
                     } else {
-                        // MIUI Grid Layout (Adaptive for phones & tablets)
+                        // Private Grid Layout (Adaptive for phones & tablets)
                         LazyVerticalGrid(
                             columns = GridCells.Adaptive(minSize = 160.dp),
                             modifier = Modifier.weight(1f),
