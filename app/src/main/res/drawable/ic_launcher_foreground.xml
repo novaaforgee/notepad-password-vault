@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#1E1E2E"
+        android:pathData="M0,0h108v108h-108z" />
+    <path
+        android:fillColor="#FFBB86FC"
+        android:pathData="M34,24C30.686,24 28,26.686 28,30L28,78C28,81.314 30.686,84 34,84L74,84C77.314,84 80,81.314 80,78L80,30C80,26.686 77.314,24 74,24L34,24ZM38,36L70,36L70,40L38,40L38,36ZM38,46L70,46L70,50L38,50L38,46ZM38,56L58,56L58,60L38,60L38,56Z" />
+    <!-- Small Lock Icon on bottom-right -->
+    <path
+        android:fillColor="#FF03DAC6"
+        android:pathData="M66,62C64.343,62 63,63.343 63,65L63,67L61,67C59.895,67 59,67.895 59,69L59,79C59,80.105 59.895,81 61,81L75,81C76.105,81 77,80.105 77,79L77,69C77,67.895 76.105,67 75,67L73,67L73,65C73,63.343 71.657,62 70,62L66,62ZM65,65C65,64.448 65.448,64 66,64L70,64C70.552,64 71,64.448 71,65L71,67L65,67L65,65Z" />
+</vector>
