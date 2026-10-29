@@ -19,7 +19,7 @@ object BiometricHelper {
     fun showBiometricPrompt(
         activity: FragmentActivity,
         title: String = "Unlock Secret Notes",
-        subtitle: String = "MIUI Private Vault - Use fingerprint or device screen lock",
+        subtitle: String = "Private Private Vault - Use fingerprint or device screen lock",
         onSuccess: () -> Unit,
         onError: (String) -> Unit
     ) {
